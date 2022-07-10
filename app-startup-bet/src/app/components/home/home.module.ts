@@ -5,14 +5,14 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 import { RegisterComponent } from "src/app/register/register.component";
 import { HomeComponent } from "./home.component";
-/*
+ 
 
 export const routes: Routes = [
 	{
 		path: "", component: HomeComponent,
 		children: [
 			//{ path: 'investigacion/expediente', component: ExpedienteComponent },
-            { path: 'register', component: RegisterComponent } 
+           // { path: 'register', component: RegisterComponent } 
 		]
 	}
 ];
@@ -22,8 +22,7 @@ export const routes: Routes = [
 
 @NgModule({
 	declarations: [ 
-        HomeComponent,
-        RegisterComponent
+        HomeComponent
 	],
 	imports: [
 		RouterModule.forChild(routes),
@@ -32,4 +31,4 @@ export const routes: Routes = [
 	providers: []
 })
 
-export class HomeModule { } */
+export class HomeModule { }  
