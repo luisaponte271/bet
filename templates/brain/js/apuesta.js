@@ -1,36 +1,48 @@
-// Ventana modal
-var modal = document.getElementById("ventanaModal");
-
-// Botón que abre el modal
-var boton = document.getElementById("abrirModal");
-
-// Hace referencia al elemento <span> que tiene la X que cierra la ventana
+ 
 var span = document.getElementsByClassName("cerrar")[0];
 
-console.log('abrir modal -> ',boton); // null
+ 
+function abrirModal(id) {
+  var modal = document.getElementById("ventanaModal"+id);  
+  modal.style.display = "block"; 
+} 
 
-function closeModal() {            
+function closeModal(id) {       
+  console.log('test ', id)
+  var modal = document.getElementById("ventanaModal"+id);      
   modal.style.display = "none";
 }
-
-if (boton) { 
-    boton.addEventListener('click', () => {
-    modal.style.display = "block";
-    });
-}
-
-console.log('abrir modal -> ',span); // null
-// Si el usuario hace click en la x, la ventana se cierra
+          
 if (span) { 
     span.addEventListener('click', () => {
     modal.style.display = "none";
     });
 }
+
+function keyup(id)  {   
+  var ganancia = document.getElementById("ganancia"+id);
+  var cantidad = document.getElementById("cantidad"+id).value; 
+  var profit = document.getElementById("profit"+id).value; 
+  console.log('change event1. (%s)', cantidad.value);
+   
+  ganancia.value=cantidad*profit; 
  
-  
-// Si el usuario hace click fuera de la ventana, se cierra.
-window.addEventListener("click",function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-});
+}
+ 
+
+  /*
+$( document ).ready(function() {
+  cant.addEventListener('keydown', (event) => {
+    const thisTarget = event.target;
+    console.log('change event. (%s)', thisTarget.value);
+   // ganancia = document.getElementById("ganancia");
+    console.log('test ', ' pasa x aca');
+  }); 
+});  
+
+
+window.addEventListener("click",function(event) { 
+    if(event.target == modal) { 
+    event.target.style.display = "none"; 
+    }
+});¨*/

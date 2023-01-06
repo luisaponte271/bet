@@ -80,7 +80,7 @@ $(document).ready(function() {
 					{
 						$(".error").text("Er is een fout opgetreden! Neem a.u.b. contact op met de Website Beheerder.").css('display', 'block');
 					}
-				} else if (language == 'es') {
+				 } else if (language == 'es') { 
 					if (result == "empty_username")
 					{
 						$(".error").text("You forget enter a username.");

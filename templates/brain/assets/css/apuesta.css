@@ -102,3 +102,8 @@ element.style {
     text-decoration: none;
     cursor: pointer;
   }
+
+  .u-full-width {
+    width: 100%;
+    box-sizing: border-box; 
+  }

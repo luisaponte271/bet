@@ -100,179 +100,108 @@ Developed by
                       <!-- agregando container para la lista de partidos-->
                       <div class="container">
                           <div class="row">
-                            <div class="col-sm">
+                           
                                 <!-- card example 1*-->
-                                <div class="card" style="width: 25rem;">
-                                  <div class="card-body">
-                                      <h5 class="card-title"> 【China Super League de la Asociación de Fútbol】 </h5>
-                                      <!-- card imagen de test -->
-                                      <div class="row justify-content-md-center">
-                                        <div class="col-md-4 ">
-                                            <div class="text-center">
-                                              <div class="text-center col-md-4 columna-img-center columna-img-tamaño">
-                                                  <img
-                                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/FC_Barcelona_2002.png/190px-FC_Barcelona_2002.png"
-                                                    alt="...">
-                                              </div>
-                                              <div class="text-center col-md-4 columna-txt">
-                                                  <p>Fútbol femenino de Qingzhou FC</p>
-                                              </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2 columna-img-center">
-                                            <div class="text-center ">
-                                              <img
-                                                  src="https://png.pngtree.com/png-clipart/20190828/ourlarge/pngtree-versus-vs-letters-fight-text-with-comic-fighting-cartoon-style-for-png-image_1701514.jpg"
-                                                  alt="...">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="text-center">
-                                              <div class="text-center col-md-4 columna-img-center columna-img-tamaño">
-                                                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/FPF.svg" alt="...">
-                                              </div>
-                                              <div class="text-center col-md-4 columna-txt">
-                                                  <p>Fútbol femenino de Peru FC</p>
-                                              </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-10">
-                                            <div class="text-center">
-                                              <p> 2022-07-04 23:00 </p>
-                                              <button type="button" id="abrirModal" class="btn btn-success">Apuesta</button>
-                                              <!--inicio - modal -->
-                                              <div id="ventanaModal" class="modal">
-                                              <div class="modal-dialog" role="document">
-                                              <div class="modal-content">
-                                                <div class="modal-header">
-                                                  <h5 class="modal-title" >Alige tu apuesta</h5>
-                                                  <button type="button" class="close" onclick="closeModal()" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                  </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                <label>Tipo de moneda</label>
-                                                <input type="text" class="form-control" placeholder="USDT" disabled="true">
-                                                <label>Total dinero</label>
-                                                <input type="text" class="form-control" placeholder="#00.00" disabled="true">
-                                                <label>Porcentaje profit</label>
-                                                <input type="text" class="form-control" placeholder="%0.05" disabled="true">
-                                                <label>Cantidad</label>
-                                                <input type="text" class="form-control" placeholder="0" disabled="true">
-                                                <label>Ganancia</label>
-                                                <input type="text" class="form-control" placeholder="10000" disabled="true">
-                                                </div>
-                                                <div class="modal-footer">
-                                                  <button type="button" class="btn btn-primary">Save changes</button>
-                                                  <button type="button" class="btn btn-secondary" onclick="closeModal()">Close</button>
-                                                </div>
-                                              </div>
-                                            </div>
-                                            </div>
-                                              <!--fin - modal -->
-                                            </div>
-                                        </div>
-                                      </div>
-                                  </div>
+                                
+                                  
+                                  <?php
+                                      $user_id = User::userData('id'); 
+                                      $sql = $dbh->prepare("SELECT * FROM confrontation"); 
+                                      $sql->execute();
+                                      $i = 1;
+                                  while ($news = $sql->fetch()) {
+                                    echo '<div class="card" style="width: 25rem;">';
+                                    echo '<div class="col-sm">';
+                                    echo '<div class="card-body">';
+                                    echo '<h5 class="card-title">' . $news["title"] . ' </h5>';
+                                    echo '<div class="row justify-content-md-center">';
+                                    echo '<div class="col-md-4 ">';
+                                    echo '<div class="text-center">';
+                                    echo '<div class="text-center col-md-4 columna-img-center columna-img-tamaño">';
+
+                                    $profile_picture = base64_encode($news['team1imagen']);
+                                    echo '<img src="data:image/jpeg;base64,' . $profile_picture . '" alt="..."/>';
+
+                                    echo '</div>';
+                                    echo '<div class="text-center col-md-4 columna-txt">';
+                                    echo '<p>' . $news['team1'] . '</p>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '<div class="col-md-2 columna-img-center">';
+                                    echo '<div class="text-center ">';
+                                    echo '<img src="https://png.pngtree.com/png-clipart/20190828/ourlarge/pngtree-versus-vs-letters-fight-text-with-comic-fighting-cartoon-style-for-png-image_1701514.jpg" alt="...">';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '<div class="col-md-4">';
+                                    echo '<div class="text-center">';
+                                    echo '<div class="text-center col-md-4 columna-img-center columna-img-tamaño">';
+
+                                    $profile_picture = base64_encode($news['team2imagen']);
+                                    echo '<img src="data:image/jpeg;base64,' . $profile_picture . '" alt="..."/>';
+                                    echo '</div>';
+                                    echo '<div class="text-center col-md-4 columna-txt">';
+                                    echo '<p>' . $news['team2'] . '</p>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '<div class="col-lg-10">';
+                                    echo '<div class="text-center">';
+                                    echo '<p>' . $news['date_hour_confrontation'] . '</p>';
+                                    echo '<button type="button" onclick="abrirModal(' . $i . ')" class="btn btn-success">Apuesta</button>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '</div>';  
+                                    $sql2 = $dbh->prepare("CALL sp_confrontation_users(:user,:confrontation)");
+                                    $sql2->bindParam(':user', $user_id);
+                                    $sql2->bindParam(':confrontation', $news['id']);
+                                    $sql2->execute();
+                                    while ($modal = $sql2->fetch()) {
+                                     
+                                      echo '<div id="ventanaModal' . $i . '" class="modal">';
+                                      echo '<div class="modal-dialog" role="document">';
+                                      echo '<div class="modal-content">';
+                                      echo '<div class="modal-header">';
+                                      echo '<h5 class="modal-title" >Alige tu apuesta</h5>';
+                                      echo '<button type="button" class="close" onclick="closeModal(' . $i . ')" aria-label="Close">';
+                                      echo '<span aria-hidden="true">&times;</span>';
+                                      echo '</button>';
+                                      echo '</div>';
+                                      echo '<div class="modal-body">';
+                                      echo '<form action="apuestasave" method="post">';
+                                      echo '<label>Tipo de moneda</label>';
+                                      echo '<input type="text" class="form-control" placeholder="USDT" disabled="true">';
+                                      echo '<label>Total dinero</label>'; 
+                                      echo '<input type="text" class="form-control" id="saldo'. $i . '" value="' . $modal['saldo'] . '" disabled="true">';
+                                      echo '<label>Profit</label>';
+                                      echo '<input type="text" class="form-control" id="profit'. $i . '" value="' . $modal['profit']/100 . '" disabled="true">';
+                                      echo '<label>Cantidad</label>'; 
+                                      echo '<input type="text" class="form-control" id="cantidad'. $i . '" onkeyup="keyup(' .$i.')">';
+                                      echo '<label>Ganancia</label>';
+                                      echo '<input type="text" class="form-control" id="ganancia'. $i . '" disabled="true">';
+                                      echo '<div class="modal-footer">';
+                                      echo '<button type="button" class="btn btn-primary">Save changes</button>';
+                                      echo '<button type="button" class="btn btn-secondary" onclick="closeModal(' . $i . ')">Close</button>';
+                                      echo '</div>';
+                                      echo '</form>';
+                                      echo '</div>';
+
+                                      echo '</div>';
+                                      echo '</div>';
+                                      echo '</div>';
+                                     
+                                      $i++;
+                                    }
+                                  }
+                                  ?>
+                                    
                                 </div>
                                 <!--end-->
                             </div>
-                            <div class="col-sm">
-                                <!-- card example 1*-->
-                                <div class="card" style="width: 25rem;">
-                                  <div class="card-body">
-                                      <h5 class="card-title"> 【China Super League de la Asociación de Fútbol】 </h5>
-                                      <!-- card imagen de test -->
-                                      <div class="row justify-content-md-center">
-                                        <div class="col-md-4 ">
-                                            <div class="text-center">
-                                              <div class="text-center col-md-4 columna-img-center columna-img-tamaño">
-                                                  <img
-                                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/FC_Barcelona_2002.png/190px-FC_Barcelona_2002.png"
-                                                    alt="...">
-                                              </div>
-                                              <div class="text-center col-md-4 columna-txt">
-                                                  <p>Fútbol femenino de Qingzhou  FC</p>
-                                              </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2 columna-img-center">
-                                            <div class="text-center ">
-                                              <img
-                                                  src="https://png.pngtree.com/png-clipart/20190828/ourlarge/pngtree-versus-vs-letters-fight-text-with-comic-fighting-cartoon-style-for-png-image_1701514.jpg"
-                                                  alt="...">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="text-center">
-                                              <div class="text-center col-md-4 columna-img-center columna-img-tamaño">
-                                                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/FPF.svg" alt="...">
-                                              </div>
-                                              <div class="text-center col-md-4 columna-txt">
-                                                  <p>Fútbol femenino de Peru FC</p>
-                                              </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-10">
-                                            <div class="text-center">
-                                              <p> 2022-07-04 23:00 </p>
-                                              <button type="button" class="btn btn-success">Apuesta</button>
-                                            </div>
-                                        </div>
-                                      </div>
-                                  </div>
-                                </div>
-                                <!--end-->
-                            </div>
-                            <div class="col-sm">
-                                <!-- card example 1*-->
-                                <div class="card" style="width: 25rem;">
-                                  <div class="card-body">
-                                      <h5 class="card-title"> 【China Super League de la Asociación de Fútbol】 </h5>
-                                      <!-- card imagen de test -->
-                                      <div class="row justify-content-md-center">
-                                        <div class="col-md-4 ">
-                                            <div class="text-center">
-                                              <div class="text-center col-md-4 columna-img-center columna-img-tamaño">
-                                                  <img
-                                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/FC_Barcelona_2002.png/190px-FC_Barcelona_2002.png"
-                                                    alt="...">
-                                              </div>
-                                              <div class="text-center col-md-4 columna-txt">
-                                                  <p>Fútbol femenino de Qingzhou FC</p>
-                                              </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2 columna-img-center">
-                                            <div class="text-center ">
-                                              <img
-                                                  src="https://png.pngtree.com/png-clipart/20190828/ourlarge/pngtree-versus-vs-letters-fight-text-with-comic-fighting-cartoon-style-for-png-image_1701514.jpg"
-                                                  alt="...">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="text-center">
-                                              <div class="text-center col-md-4 columna-img-center columna-img-tamaño">
-                                                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/FPF.svg" alt="...">
-                                              </div>
-                                              <div class="text-center col-md-4 columna-txt">
-                                                  <p>Fútbol femenino de Peru FC</p>
-                                              </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-10">
-                                            <div class="text-center">
-                                              <p> 2022-07-04 23:00 </p>
-                                              <button type="button" class="btn btn-success">Apuesta</button>
-                                            </div>
-                                        </div>
-                                      </div>
-                                  </div>
-                                </div>
-                                <!--end-->
-                            </div>
-                          </div>
-                      </div>
+
                     </div>
                 </div>
               </section> 
