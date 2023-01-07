@@ -105,7 +105,7 @@ Developed by
                                 
                                   
                                   <?php
-                                      $user_id = User::userData('id'); 
+                                      $user_id = $_SESSION['id'];
                                       $sql = $dbh->prepare("SELECT * FROM confrontation"); 
                                       $sql->execute();
                                       $i = 1;
@@ -171,24 +171,24 @@ Developed by
                                       echo '</button>';
                                       echo '</div>';
                                       echo '<div class="modal-body">';
-                                      echo '<form action="apuestasave" method="post">';
+                                     // echo '<form  method="post" name="formajax" id="frmajax" enctype="multipart/form-data">';
+                                      echo '<form action="apuestadd2"  enctype="multipart/form-data">';
                                       echo '<label>Tipo de moneda</label>';
                                       echo '<input type="text" class="form-control" placeholder="USDT" disabled="true">';
                                       echo '<label>Total dinero</label>'; 
-                                      echo '<input type="text" class="form-control" id="saldo'. $i . '" value="' . $modal['saldo'] . '" disabled="true">';
+                                      echo '<input type="text" class="form-control" name="saldo" id="saldo'. $i . '" value="' . $modal['saldo'] . '" disabled="true">';
                                       echo '<label>Profit</label>';
-                                      echo '<input type="text" class="form-control" id="profit'. $i . '" value="' . $modal['profit']/100 . '" disabled="true">';
+                                      echo '<input type="text" class="form-control" name="profit" id="profit'. $i . '" value="' . $modal['profit']/100 . '" disabled="true">';
                                       echo '<label>Cantidad</label>'; 
-                                      echo '<input type="text" class="form-control" id="cantidad'. $i . '" onkeyup="keyup(' .$i.')">';
+                                      echo '<input type="text" class="form-control" name="cantidad" id="cantidad'. $i . '" onkeyup="keyup(' .$i.')">';
                                       echo '<label>Ganancia</label>';
-                                      echo '<input type="text" class="form-control" id="ganancia'. $i . '" disabled="true">';
+                                      echo '<input type="text" class="form-control" name="ganancia" id="ganancia'. $i . '" disabled="true">';
                                       echo '<div class="modal-footer">';
-                                      echo '<button type="button" class="btn btn-primary">Save changes</button>';
+                                      echo '<button type="submit" name="Submit" class="btn btn-primary">Save changes</button>';
                                       echo '<button type="button" class="btn btn-secondary" onclick="closeModal(' . $i . ')">Close</button>';
                                       echo '</div>';
                                       echo '</form>';
-                                      echo '</div>';
-
+                                      echo '</div>'; 
                                       echo '</div>';
                                       echo '</div>';
                                       echo '</div>';

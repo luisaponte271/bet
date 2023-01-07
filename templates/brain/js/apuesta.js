@@ -28,21 +28,43 @@ function keyup(id)  {
   ganancia.value=cantidad*profit; 
  
 }
+/*
+function enviar(){
+  saldo=document.datos.saldo.value;  
+  profit=document.datos.profit.value;  
+  cantidad=document.datos.cantidad.value;  
+
+  alert('saldo' + saldo);
+  alert('profit' + profit);
+  alert('cantidad' + cantidad);
+
+ 
+  ruta="ejemplo9.php" //ruta del archivo
+  envio1="envioEmail="+reemail; //datos email
+  envio2="envioContra1="+recontra1; //datos contraseña 1�
+  envio3="envioContra2="+recontra2; //datos contraseña 2�
+  url=ruta+"?"+envio1+"&"+envio2+"&"+envio3; //url para enviar
+  ajax1=new ObjetoAjax; //instanciar objeto ObjetoAjax;
+  ajax1.pedirTexto(url,"comp"); //método que devuelve texto en un id. 
+}
+ */
+ 
+  $(document).ready(function (){
+      $('#btnguardar').click(function (){
+             var datos=$('#frmajax').serialize();
+             alert(datos);
+             return false;
+            $.ajax({
+                 type: "POST",
+                 url: "apuestaadd2",
+                 data:datos,
+                 success:function(){ 
+                 
+                 }
+             });
+         });
+   });
  
 
-  /*
-$( document ).ready(function() {
-  cant.addEventListener('keydown', (event) => {
-    const thisTarget = event.target;
-    console.log('change event. (%s)', thisTarget.value);
-   // ganancia = document.getElementById("ganancia");
-    console.log('test ', ' pasa x aca');
-  }); 
-});  
 
-
-window.addEventListener("click",function(event) { 
-    if(event.target == modal) { 
-    event.target.style.display = "none"; 
-    }
-});¨*/
+ 
