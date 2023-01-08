@@ -8,67 +8,14 @@
     <?php
 
 if(isset($_POST['Submit'])) {	
-	$title =  $_POST['title'];
-    $team1 =  $_POST['team1'];
-	/*	if (isset($_FILES['team1imagen'])) {
-			$team1imagen_name =  $_FILES['team1imagen']["name"]; 
-			$team1imagen_size= $_FILES["team1imagen"]["size"];
-			$team1imagen_type= $_FILES["team1imagen"]["type"];
-			$team1imagen_temporal= $_FILES["team1imagen"]["tmp_name"]; 
-
-			if ($team1imagen_type=="image/x-png" || $team1imagen_type=="image/png") {
-			 $extension="image/png";
-			}
-			if ($team1imagen_type=="image/pjpeg" || $team1imagen_type=="image/jpeg") {
-			 $extension="image/jpeg";
-			}
-			if ($team1imagen_type=="image/gif" || $team1imagen_type=="image/gif") {
-			 $extension="image/gif";
-			}
-
-			$f1= fopen($team1imagen_temporal,"wb"); 
-			$f1_reconvertida = fread($f1, $team1imagen_size);
-			$f1_reconvertida = base64_encode($f1_reconvertida);
- 
-			fclose($f1);
-
-		} else { 
-			echo "<font color='red'>imagen team 1 not set</font><br/>";
-		} */
+		$title =  $_POST['title'];
+		$team1 =  $_POST['team1']; 
 		$team1imagen_name =  $_FILES['team1imagen']["name"]; 
 		$team1imagen_size= $_FILES["team1imagen"]["size"];
 		$team1imagen_type= $_FILES["team1imagen"]["type"]; 
 		$team1imagen_temporal= $_FILES["team1imagen"]["tmp_name"]; 
-		$team1imagen_temporal = file_get_contents($team1imagen_temporal);
-		//echo 'test - ' . $team1imagen_temporal;
-
-		
-    $team2 =  $_POST['team2'];
-	/*	if (isset($_FILES['team2imagen'])) {
-			$team2imagen_name = $_FILES['team2imagen']["name"];
-			$team2imagen_size = $_FILES["team2imagen"]["size"];
-			$team2imagen_type = $_FILES["team2imagen"]["type"];
-			$team2imagen_temporal = $_FILES["team2imagen"]["tmp_name"];
-
-			if ($team2imagen_type=="image/x-png" || $team2imagen_type=="image/png") {
-				$extension="image/png";
-			   }
-			   if ($team2imagen_type=="image/pjpeg" || $team2imagen_type=="image/jpeg") {
-				$extension="image/jpeg";
-			   }
-			   if ($team2imagen_type=="image/gif" || $team2imagen_type=="image/gif") {
-				$extension="image/gif";
-				}
-
-				$f2= fopen($team2imagen_temporal,"rb");
-				$f2_reconvertida = fread($f2, $team2imagen_size);
-				$f2_reconvertida = base64_encode($f2_reconvertida);
-				 
-				fclose($f2);
-		} else { 
-			echo "<font color='red'>imagen team 2 not set</font><br/>";
-		} */
-
+		$team1imagen_temporal = file_get_contents($team1imagen_temporal); 
+    	$team2 =  $_POST['team2'];  
 		$team2imagen_name =  $_FILES['team2imagen']["name"]; 
 		$team2imagen_size= $_FILES["team2imagen"]["size"];
 		$team2imagen_type= $_FILES["team2imagen"]["type"]; 
@@ -76,9 +23,7 @@ if(isset($_POST['Submit'])) {
 		$team2imagen_temporal = file_get_contents($team2imagen_temporal);
 		$profit = $_POST['profit'];
     	$date =  $_POST['date'];
-
-		
-	// checking empty fields
+ 
  	if(empty($title) || empty($team1) || empty($team1imagen_name) || empty($team2) 
 	    || empty($team2imagen_name) || empty($date) || empty($profit) ) { 
 		if(empty($title)) {
