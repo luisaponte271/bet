@@ -21,7 +21,7 @@
         </div>
         <div>
             <label class="form-label">Imagen Team1</label>
-            <input class="form-control" type="file" name="team1imagen" multiple /> 
+            <input class="form-control" type="file" name="team1imagen" multiple />
         </div>
         <div class="form-group">
             <label>team 2</label>
@@ -29,11 +29,11 @@
         </div>
         <div>
             <label class="form-label">Imagen Team2</label>
-            <input class="form-control" type="file" name="team2imagen" multiple /> 
+            <input class="form-control" type="file" name="team2imagen" multiple />
         </div>
         <div class="form-group">
-            <label>date</label>
-            <input type="date" class="form-control" name="date" value="2022-12-28">
+            <label for="datetime-local">date</label>
+            <input id="datetime-local" class="form-control" name="date" type="datetime-local" />
         </div>
         <div class="form-group">
             <label>Profit</label>
@@ -44,5 +44,6 @@
         <button type="submit" name="Submit" class="btn btn-primary">Submit</button>
     </form>
 </body>
+ 
 
 </html>
