@@ -1,0 +1,39 @@
+.info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 100%;
+    color: #606060;
+    margin-bottom: 27px;
+}
+.section-title {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 40px;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -1px;
+    text-transform: capitalize;
+    color: #323232;
+    padding-bottom: 16px;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.section-title::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70px;
+    height: 13px;
+    background: -webkit-linear-gradient(315deg, #CB26B6, #F8B127);
+    background: -o-linear-gradient(315deg, #CB26B6, #F8B127);
+    background: linear-gradient(135deg, #CB26B6, #F8B127);
+    background: url("/templates/brain/assets/img/vector-1.png") center center no-repeat;
+    background-size: 55px;
+    border-radius: 3px;
+}

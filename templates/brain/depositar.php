@@ -93,55 +93,57 @@ $(document).ready(function(e) {
                                                             <div
                                                                 class="d-flex justify-content-center align-self-center">
                                                                 <div id="buyHashAjaxContent" style="overflow: hidden;">
-                                                                    <div class="col-lg-12 alert alert-danger mt-2"
-                                                                        role="alert" id="buyHashAlertDanger"
-                                                                        style="display:none;"></div>
+                                                                    <form method="POST" action="depositarnext">
+                                                                        <div class="col-lg-12 alert alert-danger mt-2"
+                                                                            role="alert" id="buyHashAlertDanger"
+                                                                            style="display:none;"></div>
 
 
-                                                                    <div class="col-md-12 mt-2">
-                                                                        <div class="form-group">
-                                                                            <label style="vertical-align: inherit;">
-                                                                                ¿Cuántos USD quieres invertir?
-                                                                            </label>
-                                                                            <input type="text" required=""
-                                                                                id="depositUsdAmount" min="1"
-                                                                                max="9999999" class="form-control">
+                                                                        <div class="col-md-12 mt-2">
+                                                                            <div class="form-group">
+                                                                                <label style="vertical-align: inherit;">
+                                                                                    ¿Cuántos USD quieres invertir?
+                                                                                </label>
+                                                                                <input type="text" required=""
+                                                                                    id="depositUsdAmount" min="1"
+                                                                                    max="9999999" class="form-control"
+                                                                                    disabled>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
 
-                                                                    <div class="col-md-12 mt-2">
-                                                                        <div class="form-group">
-                                                                            <label style="vertical-align: inherit;">
-                                                                                Cantidad de USDT que desea comprar
-                                                                            </label>
-                                                                            <input type="text" required=""
-                                                                                id="depositHashAmount" min="1"
-                                                                                max="9999999" class="form-control">
+                                                                        <div class="col-md-12 mt-2">
+                                                                            <div class="form-group">
+                                                                                <label style="vertical-align: inherit;">
+                                                                                    Cantidad de USDT que desea comprar
+                                                                                </label>
+                                                                                <input type="text" required=""
+                                                                                    id="depositHashAmount" min="1"
+                                                                                    max="9999999" class="form-control">
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
 
-                                                                    <div class="col-md-12">
-                                                                        <div class="form-group">
-                                                                            <label style="vertical-align: inherit;">
-                                                                                La moneda que quieres pagar
-                                                                            </label>
-                                                                            <input type="text" required=""
-                                                                                id="depositHashAmount" min="1"
-                                                                                value="Tether (USDT)" max="9999999"
-                                                                                class="form-control" disabled>
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-group">
+                                                                                <label style="vertical-align: inherit;">
+                                                                                    La moneda que quieres pagar
+                                                                                </label>
+                                                                                <input type="text" required=""
+                                                                                    id="depositHashAmount" min="1"
+                                                                                    value="Tether (USDT)" max="9999999"
+                                                                                    class="form-control" disabled>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
 
-                                                                    <div class="col-12 mt-2">
-                                                                        <div
-                                                                            class="btn-box justify-content-end text-center">
-                                                                            <button type="button"
-                                                                                class="btn btn-success"
-                                                                                id="depositNext">
-                                                                                Próximo
-                                                                            </button>
+                                                                        <div class="col-12 mt-2">
+                                                                            <div
+                                                                                class="btn-box justify-content-end text-center">
+                                                                                <button type="submit" name="Submit"
+                                                                                    class="btn btn-success">
+                                                                                    Próximo
+                                                                                </button>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
+                                                                    </form>
                                                                 </div>
                                                             </div>
                                                         </div>

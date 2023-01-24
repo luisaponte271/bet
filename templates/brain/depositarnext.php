@@ -51,6 +51,7 @@ $(document).ready(function(e) {
     </script>
     <link rel="stylesheet" type="text/css" href="../../templates/brain/assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../templates/brain/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../templates/brain/assets/css/depositar.css">
     <title><?= $config['hotelName'] ?>: <?= User::userData('username') ?></title>
 </head>
 <?php 
@@ -87,7 +88,7 @@ $(document).ready(function(e) {
                                                             </div>
                                                             <div
                                                                 class="d-flex justify-content-center align-self-center">
- 
+
                                                                 <div id="buyHashAjaxContent" style="overflow: hidden;">
                                                                     <div class="custom-col web">
                                                                         <div class="single-portfolio-box">
@@ -105,13 +106,13 @@ $(document).ready(function(e) {
                                                                                     <li class="section-title"
                                                                                         style="font-size: 18px !important;margin-bottom: 0px !important;color: #edaa29 !important;">
                                                                                         <span
-                                                                                            style="color:#eaeaea !important;font-size: 18px;font-weight: 400;">Coin:</span><br>
+                                                                                            style="color:#000000 !important;font-size: 18px;font-weight: 400;">Coin:</span><br>
                                                                                         USDT
                                                                                     </li>
                                                                                     <li class="section-title"
                                                                                         style="font-size: 18px !important;margin-bottom: 0px !important;color: #edaa29 !important;">
                                                                                         <span
-                                                                                            style="color:#eaeaea !important;font-size: 18px;font-weight: 400;">Network:</span><br>
+                                                                                            style="color:#000000 !important;font-size: 18px;font-weight: 400;">Network:</span><br>
                                                                                         TRON (TRC-20)
                                                                                     </li>
                                                                                 </ul>
@@ -120,36 +121,30 @@ $(document).ready(function(e) {
                                                                                     <li class="section-title"
                                                                                         style="font-size: 18px !important;margin-bottom: 0px !important;color: #edaa29 !important;">
                                                                                         <span
-                                                                                            style="color:#eaeaea !important;font-size: 18px;font-weight: 400;">Amount:</span><br>
+                                                                                            style="color:#000000 !important;font-size: 18px;font-weight: 400;">Amount:</span><br>
                                                                                         1875 Usdt
                                                                                     </li>
                                                                                 </ul>
                                                                                 <span
-                                                                                    style="background: linear-gradient(313deg, #e91919, #27b923);-webkit-background-clip: text;background-clip: text;color:transparent;margin-left: 0px !important;margin-bottom: 5px !important;font-weight: bold !important;">Payment
+                                                                                    style="-webkit-background-clip: text;background-clip: text;color:#000000;margin-left: 0px !important;margin-bottom: 5px !important;font-weight: bold !important;">Payment
                                                                                     Wallet</span>
                                                                                 <div
                                                                                     class="input-group mb-3 form-group">
                                                                                     <input readonly="" type="text"
                                                                                         class="form-control"
                                                                                         value="TWLyCHriFP2RcQHFrYXJVvR1AjJ8sBgDaG"
-                                                                                        id="walletInputCopy">
-                                                                                    <!-- <div class="input-group-append">
-                                                                                        <button
-                                                                                            class="btn btn-secondary btn-clipboard"
-                                                                                            data-clipboard-action="copy"
-                                                                                            data-clipboard-target="#walletInputCopy"><i
-                                                                                                class="fa fa-copy"></i></button>
-                                                                                    </div> -->
+                                                                                        id="walletInputCopy"> 
                                                                                 </div>
                                                                             </div>
 
                                                                             <ul class="info mt-5">
-                                                                                <li class="text-black">If you deposit
+                                                                                <li class="text-black">
+                                                                                    si depositas
                                                                                     <strong class="text-warning">1875
                                                                                         Usdt</strong>, <strong
                                                                                         class="text-success">250000
-                                                                                        TH/s</strong> will be added to
-                                                                                    your account.
+                                                                                        TH/s</strong> se añadirá a
+                                                                                    su cuenta.
                                                                                 </li>
                                                                             </ul>
                                                                             <ul class="info mt-5">
